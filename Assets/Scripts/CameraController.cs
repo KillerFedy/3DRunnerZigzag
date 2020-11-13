@@ -10,7 +10,7 @@ public class CameraController : MonoBehaviour
     private void Start () {
         _offset = transform.position - _player.transform.position;
     }
-    private void Update () {
+    private void FixedUpdate () {
         transform.position = _player.transform.position + _offset;
     }
 

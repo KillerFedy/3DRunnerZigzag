@@ -14,17 +14,21 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void Update()
+    private void FixedUpdate()
     {
         if (Input.GetMouseButtonDown(0))
         {
             ChangeDirection();   
         }
         if (_isMovingRight) {
-            _playerRigidbody.velocity = new Vector3 (_speed, 0f, 0f);
+            //_playerRigidbody.AddForce(new Vector3 (_speed, 0f, 0f));
+            transform.Translate(new Vector3 (_speed, 0f, 0f) * Time.fixedDeltaTime);
+            //_playerRigidbody.velocity = new Vector3 (_speed, 0f, 0f);
         } 
         else {
-            _playerRigidbody.velocity = new Vector3 (0f, 0f, _speed);
+            //_playerRigidbody.AddForce(new Vector3 (0, 0f, _speed));
+            transform.Translate(new Vector3 (0f, 0f, _speed) * Time.fixedDeltaTime);
+            //_playerRigidbody.velocity = new Vector3 (0f, 0f, _speed);
         }
 
     }
