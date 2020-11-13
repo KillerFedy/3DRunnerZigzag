@@ -16,7 +16,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        _playerRigidbody.velocity = new Vector3 (_speed, 0f,0f);
         if (Input.GetMouseButtonDown(0))
         {
             ChangeDirection();   
@@ -25,7 +24,7 @@ public class PlayerController : MonoBehaviour
             _playerRigidbody.velocity = new Vector3 (_speed, 0f, 0f);
         } 
         else {
-            _playerRigidbody.velocity = new Vector3 (0f, 0f, _speed);
+            _playerRigidbody.velocity += new Vector3 (0f, 0f, _speed);
         }
 
     }
