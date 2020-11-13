@@ -8,13 +8,13 @@ public class PlayerController : MonoBehaviour
     private float _speed = 5f; 
     private bool _isMovingRight = true;
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         _playerRigidbody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         _playerRigidbody.velocity = new Vector3 (_speed, 0f,0f);
         if (Input.GetMouseButtonDown(0))
