@@ -5,11 +5,20 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision other)
+    [SerializeField] private Transform _playerTransform;
+    [SerializeField] private Transform _blockParent;
+
+    private void Update()
     {
-        if (other.gameObject.TryGetComponent<PlayerController>(out PlayerController player))
+        if (transform.position.x < _playerTransform.position.x || transform.position.z < _playerTransform.position.z)
         {
             Destroy(gameObject, 5);
         }
+    }
+
+    public void Init(Transform player, Transform parent)
+    {
+        _playerTransform = player;
+        transform.parent = parent;
     }
 }
