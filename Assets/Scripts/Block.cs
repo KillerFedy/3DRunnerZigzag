@@ -24,9 +24,12 @@ public class Block : MonoBehaviour
 
     private void Update()
     {
-        if (transform.position.x < _playerTransform.position.x || transform.position.z < _playerTransform.position.z)
+        if (_playerTransform != null)
         {
-            Destroy(gameObject, 5);
+            if (transform.position.x < _playerTransform.position.x || transform.position.z < _playerTransform.position.z)
+            {
+                Destroy(gameObject, 5);
+            }
         }
     }
 

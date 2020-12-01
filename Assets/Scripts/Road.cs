@@ -7,6 +7,7 @@ public class Road : MonoBehaviour
     [SerializeField] private Block _cube;
     [SerializeField] private Transform _playerTransform;
     
+    private Vector3 _beginDirection = new Vector3(1,0,0);
     private Vector3 _lastPosition = new Vector3(0, -1, 0);
     private List<Vector3> _directionRoad = new List<Vector3>() { new Vector3(1, 0, 0),  new Vector3(0, 0, 1)};
     
@@ -14,23 +15,34 @@ public class Road : MonoBehaviour
     {
         for (int i = 0; i < 10; i++)
         {
-            CreateNewBlock(new Vector3(1,0,0));
+            StartCoroutine(CreateNewBlock(0));
         }
-        InvokeRepeating("CreateNewBlock", 1, 0.2f);
+        StartCoroutine(CreateNewBlock(0.2f));
     }
     
-    private void CreateNewBlock()
+    private IEnumerator CreateNewBlock(float time)
     {
-        int numberOfListDirections = Random.Range(0, 2);
-        _lastPosition += _directionRoad[numberOfListDirections];
-        var block = Instantiate(_cube, _lastPosition, Quaternion.identity);
-        block.Init(_playerTransform, transform);
+        yield return new WaitForSeconds(time);
+        SetBlockDirection();
+        if (_playerTransform != null)
+        {
+            var block = Instantiate(_cube, _lastPosition, Quaternion.identity);
+            block.Init(_playerTransform, transform);
+            if (time != 0)
+            {
+                StartCoroutine(CreateNewBlock(0.2f));
+            }
+        }
     }
 
-    private void CreateNewBlock(Vector3 direction)
+    private void SetBlockDirection()
     {
+        Vector3 direction = new Vector3(1,0,0);
+        if (Time.time > 3)
+        {
+            int numberOfListDirections = Random.Range(0, 2);
+            direction = _directionRoad[numberOfListDirections];   
+        }
         _lastPosition += direction;
-        var block =  Instantiate(_cube, _lastPosition, Quaternion.identity);
-        block.Init(_playerTransform, transform);
     }
 }

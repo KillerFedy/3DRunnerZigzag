@@ -11,13 +11,12 @@ public class PlayerController : MonoBehaviour
     private Rigidbody _playerRigidbody;
     private float _speed = 5f; 
     private bool _isMovingRight = true;
-    // Start is called before the first frame update
+
     private void Start()
     {
         _playerRigidbody = GetComponent<Rigidbody>();
     }
-
-    // Update is called once per frame
+    
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -46,6 +45,8 @@ public class PlayerController : MonoBehaviour
     private void Dead()
     {
         _uImanager.OnPlayerDeath();
+        Destroy(gameObject);
+        StopAllCoroutines();
     }
 
     private void OnTriggerEnter(Collider other)

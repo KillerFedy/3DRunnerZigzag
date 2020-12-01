@@ -880,8 +880,8 @@ Camera:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 1, g: 0.8509492, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -921,8 +921,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.31047365, y: -0.6293943, z: 0.3031008, w: -0.6446696}
-  m_LocalPosition: {x: -1.8220911, y: 2.9669752, z: 0.07099617}
+  m_LocalRotation: {x: -0.3765909, y: -0.20257677, z: 0.084788315, w: -0.89997387}
+  m_LocalPosition: {x: -0.032986164, y: 2.738647, z: -2.3466897}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -969,7 +969,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1031657176}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 593dc994b43b17c45a858b714e489467, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -993,7 +993,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f1e1b8b658b7dd241a8fecbcb08c22e8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1030,8 +1030,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1031657176}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.08, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -1157,7 +1157,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1380736345}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.863745, y: -3.8029194, z: 0.121820554}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1452204501}
@@ -1206,20 +1206,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cube
       objectReference: {fileID: 0}
+    - target: {fileID: 7023069970122097714, guid: 3a51f70d4720bae4b9824ec457cec353,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ac4040a9e8850ff4c8ea0bb25487024d, type: 2}
     - target: {fileID: 7023069970122097724, guid: 3a51f70d4720bae4b9824ec457cec353,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.863745
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7023069970122097724, guid: 3a51f70d4720bae4b9824ec457cec353,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.8029194
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7023069970122097724, guid: 3a51f70d4720bae4b9824ec457cec353,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.121820554
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7023069970122097724, guid: 3a51f70d4720bae4b9824ec457cec353,
         type: 3}

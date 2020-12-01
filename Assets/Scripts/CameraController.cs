@@ -11,7 +11,10 @@ public class CameraController : MonoBehaviour
         _offset = transform.position - _player.transform.position;
     }
     private void FixedUpdate () {
-        transform.position = _player.transform.position + _offset;
+        if (_player.gameObject != null)
+        {
+            transform.position = _player.transform.position + _offset;
+        }
     }
 
 }
