@@ -10,12 +10,10 @@ public class UImanager : MonoBehaviour
     [SerializeField] private GameObject _finalPanel;
     [SerializeField] private GameManager _gameManager;
     
-    
-    private void Update()
+    public void UpdateCoinText()
     {
         _score.text = _gameManager.Coin.ToString();
     }
-
     public void OnPlayerDeath()
     {
         _finalPanel.SetActive(true);

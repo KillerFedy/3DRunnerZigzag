@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private UImanager _uIManager;
     public int Coin { get; private set; }
     
     private void Start()
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
     public void AddCoin()
     {
         Coin++;
+        _uIManager.UpdateCoinText();
     }
     
     public void ReplyGame()
