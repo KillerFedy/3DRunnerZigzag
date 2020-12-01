@@ -7,7 +7,6 @@ public class Road : MonoBehaviour
     [SerializeField] private Block _cube;
     [SerializeField] private Transform _playerTransform;
     
-    private Vector3 _beginDirection = new Vector3(1,0,0);
     private Vector3 _lastPosition = new Vector3(0, -1, 0);
     private List<Vector3> _directionRoad = new List<Vector3>() { new Vector3(1, 0, 0),  new Vector3(0, 0, 1)};
     
