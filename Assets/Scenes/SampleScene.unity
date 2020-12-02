@@ -1179,6 +1179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cube: {fileID: 329824402994855193, guid: 3a51f70d4720bae4b9824ec457cec353, type: 3}
   _playerTransform: {fileID: 1031657180}
+  _gameManager: {fileID: 699203910}
 --- !u!4 &1452204501 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7023069970122097724, guid: 3a51f70d4720bae4b9824ec457cec353,
