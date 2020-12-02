@@ -6,10 +6,11 @@ public class Road : MonoBehaviour
 {
     [SerializeField] private Block _cube;
     [SerializeField] private Transform _playerTransform;
+    [SerializeField] private GameManager _gameManager;
     
     private Vector3 _lastPosition = new Vector3(0, -1, 0);
     private List<Vector3> _directionRoad = new List<Vector3>() { new Vector3(1, 0, 0),  new Vector3(0, 0, 1)};
-    
+
     private void Start()
     {
         for (int i = 0; i < 10; i++)
@@ -37,7 +38,7 @@ public class Road : MonoBehaviour
     private void SetBlockDirection()
     {
         Vector3 direction = new Vector3(1,0,0);
-        if (Time.time > 3)
+        if (_gameManager.GameTime > 3)
         {
             int numberOfListDirections = Random.Range(0, 2);
             direction = _directionRoad[numberOfListDirections];   
